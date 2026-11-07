@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(PlaySound CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_library(playsound_core INTERFACE)
+target_include_directories(playsound_core INTERFACE core)
+add_executable(ps_cli cli/main.cpp)
+target_link_libraries(ps_cli playsound_core)
